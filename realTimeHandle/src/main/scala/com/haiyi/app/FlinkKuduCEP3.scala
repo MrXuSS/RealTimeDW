@@ -31,6 +31,8 @@ object FlinkKuduCEP3 {
     env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
     env.setParallelism(3)
 
+    env.getConfig.setAutoWatermarkInterval(500)
+
     env.enableCheckpointing(5000)
 
     env.setStateBackend(new RocksDBStateBackend("file:///D:/Program/WorkSpace/IDEA_WorkSpace/checkpoint"))

@@ -9,6 +9,7 @@ import org.apache.flink.api.common.functions.RichFilterFunction
 import org.apache.flink.calcite.shaded.com.google.common.cache.{CacheBuilder, CacheLoader, LoadingCache, RemovalListener, RemovalNotification}
 import org.apache.flink.configuration.Configuration
 import org.apache.flink.streaming.api.TimeCharacteristic
+import org.apache.flink.streaming.api.functions.KeyedProcessFunction
 import org.apache.flink.streaming.api.functions.source.{RichParallelSourceFunction, SourceFunction}
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.scala.StreamExecutionEnvironment
@@ -17,6 +18,7 @@ import scala.collection.{immutable, mutable}
 import scala.util.Random
 import org.apache.flink.streaming.api.scala._
 import org.apache.flink.streaming.api.windowing.time.Time
+import org.apache.flink.util.Collector
 
 /**
  * @Author:XuChengLei
@@ -125,6 +127,20 @@ object FlinkTableLinkMysql2 {
 
     override def cancel(): Unit = {
       running = false
+    }
+  }
+
+  class MyKeyedFunction extends KeyedProcessFunction[String,String,String]{
+    override def processElement(value: String,
+                                ctx: KeyedProcessFunction[String, String, String]#Context,
+                                out: Collector[String]): Unit = {
+    }
+
+    override def onTimer(timestamp: Long,
+                         ctx: KeyedProcessFunction[String, String, String]#OnTimerContext,
+                         out: Collector[String]): Unit = {
+
+
     }
   }
 
