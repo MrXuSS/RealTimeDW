@@ -31,7 +31,7 @@ object FlinkMysql {
     env.setStreamTimeCharacteristic(TimeCharacteristic.EventTime)
     env.setParallelism(1)
 
-    env.addSource(new Mysql).keyBy(_.)
+    env.addSource(new Mysql)
 
 
     env.execute("FlinkTableLinkMysql")

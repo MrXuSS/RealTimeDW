@@ -31,6 +31,8 @@ object KeyedProcessFunctionTest {
     env.execute("KeyedProcessFunctionTest")
   }
 
+
+    // 一秒内温度连续上升
   class alert extends KeyedProcessFunction[String,SensorReading,String]{
     // 保存上一个传感器温度
     lazy val lastTemp:ValueState[Double] = getRuntimeContext
@@ -53,6 +55,7 @@ object KeyedProcessFunctionTest {
         ctx.timerService().deleteProcessingTimeTimer(curTimerTimestamp)
         currentTimer.clear()
       }else if(value.temperature > preTemp && curTimerTimestamp == 0){
+          // ！= 0： 说明之前有定时任务（此次数据和上次数据在1s内），如果出现温度下降就在上一个判断删除定时器。
         val timeTs: Long = ctx.timerService().currentProcessingTime() + 1000
         ctx.timerService().registerProcessingTimeTimer(timeTs)
         currentTimer.update(timeTs)
