@@ -24,17 +24,17 @@ object LateDataHandleTest {
         val strings: Array[String] = line.split(" ")
         (strings(0), strings(1).toLong * 1000)
       })
-      .assignTimestampsAndWatermarks(new BoundedOutOfOrdernessTimestampExtractor[(String, Long)]() {
+      .assignTimestampsAndWatermarks(new BoundedOutOfOrdernessTimestampExtractor[(String, Long)](Time.seconds(2)) {
         override def extractTimestamp(element: (String, Long)) = element._2
       })
 
-    stream
-        .keyBy(_._1)
-        .timeWindow(Time.seconds(2))
-        .sideOutputLateData(new OutputTag[(String, Long)]("later"))
-        .process(???)
+//    stream
+//        .keyBy(_._1)
+//        .timeWindow(Time.seconds(2))
+//        .sideOutputLateData(new OutputTag[(String, Long)]("later"))
+//        .process(???)
 
-    val lateStream: DataStream[(String, Long)] = stream.getSideOutput(new OutputTag[(String, Long)]("later"))
+//    val lateStream: DataStream[(String, Long)] = stream.getSideOutput(new OutputTag[(String, Long)]("later"))
 
 
     env.execute("LateDataHandleTest")

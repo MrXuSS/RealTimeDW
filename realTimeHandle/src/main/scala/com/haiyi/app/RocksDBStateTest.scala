@@ -1,5 +1,6 @@
 package com.haiyi.app
 
+import org.apache.flink.cep.scala.CEP
 import org.apache.flink.contrib.streaming.state.RocksDBStateBackend
 import org.apache.flink.runtime.state.StateBackend
 import org.apache.flink.streaming.api.environment.CheckpointConfig.ExternalizedCheckpointCleanup

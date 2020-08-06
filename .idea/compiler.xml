@@ -7,10 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="mytest" />
-        <module name="canal-mysql" />
+        <module name="realTimeHandle" />
         <module name="kafka-kudu" />
         <module name="kafka-hbase" />
-        <module name="realTimeHandle" />
+        <module name="canal-mysql" />
       </profile>
     </annotationProcessing>
   </component>
