@@ -38,9 +38,6 @@ object AllowLateTest {
         .process(new UpdateWindowCountFunction)
         .print()
 
-
-
-
     env.execute("TriggerTest")
 
   }
