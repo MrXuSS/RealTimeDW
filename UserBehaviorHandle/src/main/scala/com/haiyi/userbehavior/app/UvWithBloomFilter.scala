@@ -78,6 +78,7 @@ object UvWithBloomFilter {
                            timestamp: Long,
                            window: TimeWindow,
                            ctx: Trigger.TriggerContext): TriggerResult = {
+      // 来一条数据就进行处理和销毁
       TriggerResult.FIRE_AND_PURGE
     }
 
