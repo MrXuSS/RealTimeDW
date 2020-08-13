@@ -1,6 +1,5 @@
 package com.haiyi.userbehavior.app
 
-import com.haiyi.userbehavior.app.Top3ForLastOneHour.UserBehavior
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.timestamps.BoundedOutOfOrdernessTimestampExtractor
 import org.apache.flink.streaming.api.scala._
@@ -111,4 +110,13 @@ object UvWithBloomFilter {
       (cap - 1) & result
     }
   }
+
+  case class UserBehavior(
+                           userId:Long,
+                           itemId:Long,
+                           categoryId:Int,
+                           behavior:String,
+                           timestamp:Long
+                         )
+
 }
