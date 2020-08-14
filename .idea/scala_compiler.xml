@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="kafka-hbase,kafka-kudu,mytest,realTimeHandle" />
+    <profile name="Maven 1" modules="UserBehaviorHandle,kafka-hbase,kafka-kudu,mytest,realTimeHandle" />
   </component>
 </project>

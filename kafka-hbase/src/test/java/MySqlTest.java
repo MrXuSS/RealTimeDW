@@ -1,6 +1,4 @@
-import org.apache.flink.annotation.Public;
 import org.junit.Test;
-import org.omg.CORBA.PUBLIC_MEMBER;
 
 import java.sql.*;
 
@@ -56,6 +54,19 @@ public class MySqlTest {
             int result = preparedStatement.executeUpdate();
             preparedStatement.close();
             System.out.println(i+"插入成功");
+        }
+    }
+
+    @Test
+    public void showTable() throws SQLException {
+        String sql = "select * from SensorReading";
+        PreparedStatement statement = connection.prepareStatement(sql);
+        ResultSet resultSet = statement.executeQuery();
+        while (resultSet.next()){
+            String id = resultSet.getString("id");
+            String timestamp = resultSet.getString("timestamp");
+            String temperature = resultSet.getString("temperature");
+            System.out.println(id +"_"+ timestamp +"_"+ temperature);
         }
     }
 }

@@ -6,12 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="UserBehaviorHandle" />
+        <module name="canal-mysql" />
         <module name="mytest" />
-        <module name="realTimeHandle" />
         <module name="kafka-kudu" />
         <module name="kafka-hbase" />
-        <module name="canal-mysql" />
+        <module name="realTimeHandle" />
+        <module name="UserBehaviorAnalysis" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="UserBehaviorAnalysis" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

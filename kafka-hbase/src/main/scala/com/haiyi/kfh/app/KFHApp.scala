@@ -33,7 +33,7 @@ object KFHApp {
     env.setParallelism(1)
     env.enableCheckpointing(5000)
     //设置模式为：exactly_one，仅一次语义
-    env.getCheckpointConfig.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE);
+    env.getCheckpointConfig.setCheckpointingMode(CheckpointingMode.EXACTLY_ONCE)
     env.getCheckpointConfig.setMinPauseBetweenCheckpoints(1000)
     //检查点必须在10s之内完成，或者被丢弃【checkpoint超时时间】
     env.getCheckpointConfig.setCheckpointTimeout(10000)

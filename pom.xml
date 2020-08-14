@@ -14,6 +14,7 @@
         <module>mytest</module>
         <module>realTimeHandle</module>
         <module>kafka-kudu</module>
+        <module>UserBehaviorHandle</module>
     </modules>
 
 
