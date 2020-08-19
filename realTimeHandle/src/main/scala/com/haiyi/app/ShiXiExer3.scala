@@ -122,15 +122,15 @@ object ShiXiExer3 {
     def updateState(key:String, value:(String, String ,String)): Unit ={
       val last = lastTemp.get(key)
 
-      if(last == null){
+      if(last == null){  // 该key第一次到达
         lastTemp.put(key, value)
         mapState.put(key, ListBuffer(value))
-      }else if(value._2.toLong - last._2.toLong == 1){
+      }else if(value._2.toLong - last._2.toLong == 1){  // 数据连续
         val newList = mapState.get(key)
         newList.append(value)
         mapState.put(key, newList)
         lastTemp.put(key, value)
-      }else{
+      }else{ // 数据不连续，将之前的state清空，保留当前的state
         mapState.remove(key)
         mapState.put(key,ListBuffer(value))
         lastTemp.put(key,value)
