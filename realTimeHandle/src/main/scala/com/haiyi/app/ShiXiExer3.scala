@@ -2,7 +2,7 @@ package com.haiyi.app
 
 import java.text.SimpleDateFormat
 
-import org.apache.flink.api.common.state.{ListState, ListStateDescriptor, MapState, MapStateDescriptor, ValueState, ValueStateDescriptor}
+import org.apache.flink.api.common.state.{MapState, MapStateDescriptor}
 import org.apache.flink.api.scala.typeutils.Types
 import org.apache.flink.streaming.api.TimeCharacteristic
 import org.apache.flink.streaming.api.functions.KeyedProcessFunction
@@ -23,11 +23,11 @@ import scala.collection.mutable.ListBuffer
  *         （3）220 < DeviceData <= 260，判定为C级异常;
  *         （4）否则正常
  *         （5）过滤异常数据，丢失数据按照正常计算
+ *
  * 2. 异常持续时间
  *         （1）A级异常持续时间 >= 1小时，则输出异常信息
  *         （2）B级异常持续时间 >= 2小时，则输出异常信息
  *         （3）C级异常持续时间 >= 3小时，则输出异常信息
- *
  *
  *   已实现，但是总感觉不是很完善，其中牵扯到太多的State的读写，以后有时间在回来瞅瞅
  */

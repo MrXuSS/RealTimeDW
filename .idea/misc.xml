@@ -13,6 +13,9 @@
     </option>
     <option name="ignoredFiles">
       <set>
+        <option value="$PROJECT_DIR$/FlinkTableAndSqlExer/pom.xml" />
+        <option value="$PROJECT_DIR$/FlinkTableApiAndSql/pom.xml" />
+        <option value="$PROJECT_DIR$/FlinkTableApiAndSqlExer/pom.xml" />
         <option value="$PROJECT_DIR$/UserBehaviorAnalysis/pom.xml" />
       </set>
     </option>

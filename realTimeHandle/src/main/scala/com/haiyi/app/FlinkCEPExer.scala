@@ -52,6 +52,7 @@ object FlinkCEPExer {
       .keyBy(_._1)
 
     val strategy = AfterMatchSkipStrategy.skipToFirst("next")
+
     val cepPattern = Pattern.begin[(String, Long, Int)]("begin")
       .where(_._3 > 220)
       .next("next")

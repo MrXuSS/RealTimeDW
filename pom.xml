@@ -15,6 +15,7 @@
         <module>realTimeHandle</module>
         <module>kafka-kudu</module>
         <module>UserBehaviorHandle</module>
+        <module>FlinkTableAndSqlTest</module>
     </modules>
 
 

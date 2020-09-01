@@ -13,9 +13,13 @@
         <module name="kafka-hbase" />
         <module name="realTimeHandle" />
         <module name="UserBehaviorAnalysis" />
+        <module name="FlinkTableAndSqlTest" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="FlinkTableAndSqlExer" target="1.8" />
+      <module name="FlinkTableApiAndSql" target="1.8" />
+      <module name="FlinkTableApiAndSqlExer" target="1.8" />
       <module name="UserBehaviorAnalysis" target="1.8" />
     </bytecodeTargetLevel>
   </component>
