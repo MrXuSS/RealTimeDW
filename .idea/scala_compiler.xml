@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="Maven 1" modules="FlinkTableAndSqlTest,UserBehaviorHandle,kafka-hbase,kafka-kudu,mytest,realTimeHandle" />
+    <profile name="Maven 1" modules="FlinkTableAndSqlTest,SomeFlinkTest,UserBehaviorHandle,kafka-hbase,kafka-kudu,mytest,realTimeHandle" />
     <profile name="Maven 2" modules="FlinkTableApiAndSql">
       <parameters>
         <parameter value="-nobootcp" />

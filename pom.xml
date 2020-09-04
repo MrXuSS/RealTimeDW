@@ -16,6 +16,7 @@
         <module>kafka-kudu</module>
         <module>UserBehaviorHandle</module>
         <module>FlinkTableAndSqlTest</module>
+        <module>SomeFlinkTest</module>
     </modules>
 
 
