@@ -2,7 +2,6 @@ package com.haiyi.canal;
 
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.otter.canal.protocol.CanalEntry;
-import sun.management.counter.perf.PerfInstrumentation;
 
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class CanalHandler {
 
     public void handle(){
         if("hs_jldxx".equals(tableName)){
-            rowDateListToKafka("threadTest");
+            rowDateListToKafka("testEs");
         }
     }
 

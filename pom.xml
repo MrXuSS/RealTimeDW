@@ -17,6 +17,7 @@
         <module>UserBehaviorHandle</module>
         <module>FlinkTableAndSqlTest</module>
         <module>SomeFlinkTest</module>
+        <module>kafka-es</module>
     </modules>
 
 

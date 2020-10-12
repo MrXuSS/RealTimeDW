@@ -15,6 +15,7 @@
         <module name="UserBehaviorAnalysis" />
         <module name="FlinkTableAndSqlTest" />
         <module name="SomeFlinkTest" />
+        <module name="kafka-es" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
