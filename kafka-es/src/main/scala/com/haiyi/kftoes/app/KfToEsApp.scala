@@ -72,21 +72,6 @@ object KfToEsApp {
     result.print()
     result.addSink(esSinkBulider.build())
 
-//    val client = new RestHighLevelClient(
-//      RestClient.builder(
-//        new HttpHost("192.168.2.201", 9200, "http")
-//      )
-//    )
-//
-//    val deleteStream = result.getSideOutput(new OutputTag[String]("deleteStream"))
-//    deleteStream.map{
-//      jsonStr=>{
-//        val jSONObject = JSON.parseObject(jsonStr)
-//        val id = jSONObject.get("GZDBH").toString
-//        deleteById(client, "my-index", id)
-//      }
-//    }
-
     env.execute("KfToEsApp")
   }
 
@@ -106,17 +91,4 @@ object KfToEsApp {
     }
   }
 
-//  def deleteById(client: RestHighLevelClient, indexName:String ,id:String): Unit ={
-//    val deleteRequest = new DeleteRequest(indexName, id)
-//    val listener = new ActionListener[DeleteResponse] {
-//      override def onResponse(response: DeleteResponse): Unit = {
-//
-//      }
-//
-//      override def onFailure(e: Exception): Unit = {
-//
-//      }
-//    }
-//    client.deleteAsync(deleteRequest, RequestOptions.DEFAULT, listener)
-//  }
 }
